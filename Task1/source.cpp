@@ -50,13 +50,12 @@ int separate(std::string input, int*& arr)
 }
 int main()
 {
-    setlocale(LC_ALL, "rus");
     std::string input;
     int* arr = nullptr;
-    std::cout << "Введите строку: ";
+    std::cout << "Enter a string: ";
     std::getline(std::cin, input);
     int length = separate(input, arr);
-    std::cout << "Получившийся массив: ";
+    std::cout << "Array: ";
     for (int i = 0; i < length; i++)
     {
         std::cout << arr[i] << " ";
