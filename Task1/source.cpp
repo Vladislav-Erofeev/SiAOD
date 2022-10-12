@@ -1,11 +1,9 @@
 #include <iostream>
 #include <string>
-#include <stdio.h>
 #include <exception>
 #include <string.h>
-#include <windows.h>
 
-void add(int* &arr, int& length, int value)
+void add(int* &arr, int& length, int value) // добавление числа в массив
 {
     int* temp_array = new int[length + 1];
     for (int i = 0; i < length; i++)
@@ -18,7 +16,7 @@ void add(int* &arr, int& length, int value)
     length++;
 }
 
-bool isInteger(char* str)
+bool isInteger(char* str) // проверка слова на принадлежность к целому числу
 {
     try {
         float temp_float = std::stof(str);
@@ -31,7 +29,7 @@ bool isInteger(char* str)
     }
 }
 
-int separate(std::string input, int*& arr)
+int separate(std::string input, int*& arr) // выделение слов из предлложения
 {
     char delimiters[] = " ";
     arr = new int[0];
