@@ -48,7 +48,7 @@ int separate(std::string input, int*& arr)
     } while (temp != NULL);
     return length;
 }
-int main()
+int task1()
 {
     std::string input;
     int* arr = nullptr;
@@ -60,5 +60,4 @@ int main()
     {
         std::cout << arr[i] << " ";
     }
-    // Hello
 }
