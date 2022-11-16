@@ -3,4 +3,4 @@ project(SiAOD)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(SiAOD Task1/source.cpp Task2/main.cpp source.cpp)
+add_executable(SiAOD Task1/source.cpp Task2/main.cpp source.cpp prac5/Graph.h)

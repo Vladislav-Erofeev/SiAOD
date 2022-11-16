@@ -27,10 +27,9 @@ std::vector<int> suffi(std::string str)
     return suffshift;
 }
 
-int find(std::string text, std::string str)
+int find(std::string text, std::string str, std::vector<int> suff)
 {
-    std::vector<int> suff = suffi(str);
-    for (int i = 0; i < text.length() - str.length(); i++)
+    for (int i = 0; i <= text.length() - str.length() + 1; i++)
     {
         int pos = str.length() - 1;
         while (str[pos] == text[pos + i])
@@ -46,13 +45,36 @@ int find(std::string text, std::string str)
     return -1;
 }
 
+std::vector<int> findAll(std::string text, std::string str)
+{
+    std::vector<int> suff = suffi(str);
+    std::vector<int> ans;
+    int temp{};
+    int pos = find(text, str, suff);
+    while (pos != -1)
+    {
+        ans.push_back(pos + temp);
+        if(pos + str.length() - 1 >= text.length())
+            break;
+        text = text.substr(pos + str.length()-1, text.length());
+        temp += pos + str.length()-1;
+        pos = find(text, str, suff);
+    }
+    return ans;
+}
+
 int task2()
 {
-    std::string str;
-    std::string text;
-    std::cout << "Enter a string: ";
-    std::cin >> text;
-    std::cout << "Enter a substring: ";
-    std::cin >> str;
-    std::cout << find(text, str);
+    std::string str = "afkfv";
+    std::string text = "dsfsfsfafkfvf";
+//    std::cout << "Enter a string: ";
+//    std::cin >> text;
+//    std::cout << "Enter a substring: ";
+//    std::cin >> str;
+//    std::cout << find(text, str);
+    std::vector<int> ans = findAll(text, str);
+    for(int x : ans)
+    {
+        std::cout << x << std:: endl;
+    }
 }
