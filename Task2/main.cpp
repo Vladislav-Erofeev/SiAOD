@@ -27,9 +27,16 @@ std::vector<int> suffi(std::string str)
     return suffshift;
 }
 
+<<<<<<< HEAD
 int find(std::string text, std::string str, std::vector<int> suff)
 {
     for (int i = 0; i <= text.length() - str.length() + 1; i++)
+=======
+int find(std::string text, std::string str)
+{
+    std::vector<int> suff = suffi(str);
+    for (int i = 0; i < text.length() - str.length(); i++)
+>>>>>>> 96e45a1578409cb03af5b59cbdf3466f238c13b7
     {
         int pos = str.length() - 1;
         while (str[pos] == text[pos + i])
@@ -45,6 +52,7 @@ int find(std::string text, std::string str, std::vector<int> suff)
     return -1;
 }
 
+<<<<<<< HEAD
 std::vector<int> findAll(std::string text, std::string str)
 {
     std::vector<int> suff = suffi(str);
@@ -77,4 +85,15 @@ int task2()
     {
         std::cout << x << std:: endl;
     }
+=======
+int task2()
+{
+    std::string str;
+    std::string text;
+    std::cout << "Enter a string: ";
+    std::cin >> text;
+    std::cout << "Enter a substring: ";
+    std::cin >> str;
+    std::cout << find(text, str);
+>>>>>>> 96e45a1578409cb03af5b59cbdf3466f238c13b7
 }
