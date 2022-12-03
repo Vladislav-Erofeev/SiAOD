@@ -1,6 +1,6 @@
 #include <iostream>
+#include "prac4/prac4.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    prac4();
 }
